@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pink Pearl Couture ZM — The Mwiinga Store</title>
+  <!-- Static website deployable on GitHub Pages, Vercel, Cloudflare Pages, Netlify, etc. -->
+  <meta name="description" content="Lusaka's premier women's fashion boutique. Dresses, silk gowns, occasion wear. Two locations: Northmead & Chilenje, Lusaka, Zambia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  ✦ Two locations in Lusaka — Northmead & Chilenje ✦ WhatsApp Orders: +260 979 690 009 ✦
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <span class="nav__logo-main">PINK <span>PEARL</span></span>
+      <span class="nav__logo-sub">Couture ZM · The Mwiinga Store</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#catalogue">Collection</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#locations">Stores</a></li>
+      <li><a href="#order">How to Order</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="https://wa.me/260979690009" target="_blank" class="nav__wa">
+        <span>💬</span> WhatsApp Us
+      </a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <ul class="mobile-nav" id="mobileNav">
+    <li><a href="#catalogue">Collection</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#locations">Stores</a></li>
+    <li><a href="#order">How to Order</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <a href="https://wa.me/260979690009" target="_blank"
+         style="display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 24px;border-radius:2px;font-weight:600;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;">
+        💬 WhatsApp: +260 979 690 009
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__left">
+    <div class="hero__eyebrow">The Mwiinga Store · Lusaka, Zambia</div>
+    <h1 class="reveal">
+      Dress<br/>
+      Your <em>Finest</em><br/>
+      Self.
+    </h1>
+    <p class="hero__sub reveal">
+      Women's fashion curated for the bold, the graceful, and the unstoppably feminine. From silk evening gowns to everyday elegance — exclusively at Pink Pearl Couture ZM.
+    </p>
+    <div class="hero__ctas reveal">
+      <a href="#catalogue" class="btn btn-pink">Shop the Collection</a>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20I%20saw%20your%20collection%20and%20would%20like%20to%20enquire" target="_blank" class="btn btn-ghost">💬 WhatsApp Order</a>
+    </div>
+  </div>
+  <div class="hero__right">
+    <div class="hero__right-bg"></div>
+    <div class="hero__grid">
+      <div class="hero__grid-item"><span class="hero__grid-emoji">👗</span></div>
+      <div class="hero__grid-item"><span class="hero__grid-emoji">✨</span></div>
+      <div class="hero__grid-item"><span class="hero__grid-emoji">👜</span></div>
+      <div class="hero__grid-item"><span class="hero__grid-emoji">🌸</span></div>
+    </div>
+    <div class="hero__tag">
+      <span class="hero__tag-num">16K</span>
+      <div class="hero__tag-label">Facebook Followers</div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item">Dresses from K290</span>
+    <span class="ticker__item">Silk Gowns</span>
+    <span class="ticker__item">Evening Wear</span>
+    <span class="ticker__item">Sequin Dresses</span>
+    <span class="ticker__item">Casual Chic</span>
+    <span class="ticker__item">Northmead Store</span>
+    <span class="ticker__item">Chilenje Store</span>
+    <span class="ticker__item">WhatsApp Orders</span>
+    <span class="ticker__item">Dresses from K290</span>
+    <span class="ticker__item">Silk Gowns</span>
+    <span class="ticker__item">Evening Wear</span>
+    <span class="ticker__item">Sequin Dresses</span>
+    <span class="ticker__item">Casual Chic</span>
+    <span class="ticker__item">Northmead Store</span>
+    <span class="ticker__item">Chilenje Store</span>
+    <span class="ticker__item">WhatsApp Orders</span>
+  </div>
+</div>
+
+<!-- CATALOGUE -->
+<section class="catalogue" id="catalogue">
+  <div class="container">
+    <div class="catalogue__header">
+      <div class="catalogue__intro">
+        <div class="section-label">Current Collection</div>
+        <h2 class="section-title">The <em>Edit</em></h2>
+        <p>Handpicked pieces that celebrate your femininity. All items available in-store or via WhatsApp. New arrivals posted daily on our Facebook page.</p>
+      </div>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20I%27d%20like%20to%20see%20your%20full%20catalogue" target="_blank" class="btn btn-outline-dark">View Full Catalogue →</a>
+    </div>
+
+    <div class="catalogue__filters">
+      <button class="filter-btn active" onclick="filterCat(this,'all')">All</button>
+      <button class="filter-btn" onclick="filterCat(this,'evening')">Evening</button>
+      <button class="filter-btn" onclick="filterCat(this,'casual')">Casual</button>
+      <button class="filter-btn" onclick="filterCat(this,'silk')">Silk</button>
+    </div>
+
+    <div class="catalogue__grid" id="catalogueGrid">
+
+      <div class="product-card reveal" data-cat="evening">
+        <div class="product-card__img bg-ink">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">🖤</div>
+          <div class="product-card__badge">New In</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20black%20velvet%20dress%20K450" target="_blank" class="product-card__wa" title="Order on WhatsApp">💬</a>
+        </div>
+        <div class="product-card__name">Black Velvet Dress</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K450</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#1a1818;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="evening">
+        <div class="product-card__img" style="background:#110810;">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">✨</div>
+          <div class="product-card__badge">Best Seller</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20black%20sequin%20dress%20K550" target="_blank" class="product-card__wa" title="Order on WhatsApp">💬</a>
+        </div>
+        <div class="product-card__name">Black Sequin Gown</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K550</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#1a1818;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="silk">
+        <div class="product-card__img bg-dusty">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">🩶</div>
+          <div class="product-card__badge gold">Silk</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20silk%20slip%20dress%20K310" target="_blank" class="product-card__wa">💬</a>
+        </div>
+        <div class="product-card__name">Silk Slip Dress</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K310</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#6b5b5b;"></div>
+            <div class="product-card__color" style="background:#b08070;"></div>
+            <div class="product-card__color" style="background:#c0704a;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="casual">
+        <div class="product-card__img bg-pink">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">💗</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20hot%20pink%20maxi%20dress%20K450" target="_blank" class="product-card__wa">💬</a>
+        </div>
+        <div class="product-card__name">Hot Pink Maxi Dress</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K450</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#e8408a;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="casual">
+        <div class="product-card__img bg-blush">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">🌸</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20pink%20halter%20mini%20K290" target="_blank" class="product-card__wa">💬</a>
+        </div>
+        <div class="product-card__name">Pink Halter Mini</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K290</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#f4a8c8;"></div>
+            <div class="product-card__color" style="background:#e8f0a8;"></div>
+            <div class="product-card__color" style="background:#fff;border:1.5px solid #ccc;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="casual">
+        <div class="product-card__img" style="background:#f2ede8;">
+          <div class="product-card__img-inner" style="font-size:4.5rem;">🤍</div>
+          <div class="product-card__badge">New In</div>
+          <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20the%20tweed%20mini%20dress%20K450" target="_blank" class="product-card__wa">💬</a>
+        </div>
+        <div class="product-card__name">Tweed Mini Dress</div>
+        <div class="product-card__meta">
+          <div class="product-card__price"><span>ZMW</span>K450</div>
+          <div class="product-card__colors">
+            <div class="product-card__color" style="background:#d4c0b8;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:56px;">
+      <p style="font-size:0.82rem;opacity:0.5;margin-bottom:20px;letter-spacing:0.1em;text-transform:uppercase;">New pieces posted daily on Facebook · Message us to see the latest</p>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20please%20send%20me%20your%20latest%20catalogue" target="_blank" class="btn btn-pink">
+        💬 Request Full Catalogue on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__inner">
+      <div class="about__visual">
+        <div class="about__photo">
+          <div class="about__photo-inner" style="padding-top:130%;position:relative;">
+            <div class="about__photo-inner-content" style="font-size:5rem;">👗</div>
+          </div>
+        </div>
+        <div class="about__photo">
+          <div class="about__photo-inner" style="padding-top:130%;position:relative;background:#1e1520;">
+            <div class="about__photo-inner-content" style="font-size:5rem;">✨</div>
+          </div>
+        </div>
+        <div class="about__photo">
+          <div class="about__photo-inner" style="padding-top:80%;position:relative;background:#231318;">
+            <div class="about__photo-inner-content" style="font-size:3.5rem;">🌸</div>
+          </div>
+        </div>
+        <div class="about__photo">
+          <div class="about__photo-inner" style="padding-top:80%;position:relative;background:#1a0d12;">
+            <div class="about__photo-inner-content" style="font-size:3.5rem;">💎</div>
+          </div>
+        </div>
+      </div>
+      <div class="about__content">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title reveal" style="color:#fff;">The <em>Mwiinga</em><br/>Store.</h2>
+        <p class="about__tagline reveal">"The store that allows you to be in touch with your femininity."</p>
+        <p class="about__text reveal">
+          Pink Pearl Couture ZM was born in Lusaka with one vision: to bring aspirational, fashion-forward womenswear to Zambian women who refuse to compromise on style. From our boutique floors in Northmead and Chilenje, we curate dresses for every occasion — a silk slip for a quiet evening, a sequin gown for the night you deserve.
+        </p>
+        <div class="about__stats reveal">
+          <div class="about__stat">
+            <span class="about__stat-num">16K</span>
+            <div class="about__stat-label">Facebook Followers</div>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num">2.6K</span>
+            <div class="about__stat-label">Posts & Lookbooks</div>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num">2</span>
+            <div class="about__stat-label">Lusaka Locations</div>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num">K290</span>
+            <div class="about__stat-label">Dresses From</div>
+          </div>
+        </div>
+        <div class="reveal">
+          <a href="https://wa.me/260979690009" target="_blank" class="btn btn-pink">Shop Now via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="container">
+    <div class="locations__header">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Our <em>Two</em> Stores</h2>
+      <p style="margin-top:16px;font-size:0.9rem;opacity:0.6;max-width:480px;margin-left:auto;margin-right:auto;font-weight:300;line-height:1.9;">
+        Visit us in person at either of our Lusaka boutiques, or order via WhatsApp from anywhere in Zambia.
+      </p>
+    </div>
+    <div class="locations__grid">
+      <div class="location-card reveal">
+        <div class="location-card__number">01</div>
+        <h3>Northmead</h3>
+        <div class="location-card__details">
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              Blessings Shopping Mall, Shop S12, Northmead, Lusaka
+            </div>
+          </div>
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">📞</div>
+            <div>
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:+260979690009" style="color:var(--pink);">+260 979 690 009</a>
+            </div>
+          </div>
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">🕐</div>
+            <div>
+              <strong>Hours</strong>
+              Opening Soon — follow Facebook for updates
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/260979690009?text=Hi%2C%20I%27d%20like%20directions%20to%20your%20Northmead%20store" target="_blank" class="btn btn-dark" style="margin-top:28px;">Get Directions 💬</a>
+      </div>
+
+      <div class="location-card reveal">
+        <div class="location-card__number">02</div>
+        <h3>Chilenje</h3>
+        <div class="location-card__details">
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              Blessings Shopping Mall, Upstairs, Chilenje, Lusaka
+            </div>
+          </div>
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">📞</div>
+            <div>
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:+260979690009" style="color:var(--gold);">+260 979 690 009</a>
+            </div>
+          </div>
+          <div class="location-card__detail">
+            <div class="location-card__detail-icon">🕐</div>
+            <div>
+              <strong>Hours</strong>
+              Opening Soon — follow Facebook for updates
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/260979690009?text=Hi%2C%20I%27d%20like%20directions%20to%20your%20Chilenje%20store" target="_blank" class="btn btn-dark" style="margin-top:28px;">Get Directions 💬</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section class="howto" id="order">
+  <div class="container">
+    <div class="howto__header">
+      <div class="section-label" style="justify-content:center;">
+        <span style="display:block;width:28px;height:1px;background:var(--gold);"></span>
+        Simple Process
+      </div>
+      <h2 class="section-title" style="margin-top:12px;">How to <em>Order</em></h2>
+    </div>
+    <div class="howto__steps">
+      <div class="howto__step reveal">
+        <div class="howto__step-circle">
+          📱
+          <div class="howto__step-num">1</div>
+        </div>
+        <h4>Browse</h4>
+        <p>Explore our Facebook page or this website for current pieces. New looks go up every day.</p>
+      </div>
+      <div class="howto__step reveal">
+        <div class="howto__step-circle">
+          💬
+          <div class="howto__step-num">2</div>
+        </div>
+        <h4>Message Us</h4>
+        <p>WhatsApp or call <strong>+260 979 690 009</strong> with the item name and your size.</p>
+      </div>
+      <div class="howto__step reveal">
+        <div class="howto__step-circle">
+          📦
+          <div class="howto__step-num">3</div>
+        </div>
+        <h4>Confirm &amp; Pay</h4>
+        <p>We confirm availability, confirm your price in ZMW (Kwacha), and arrange payment.</p>
+      </div>
+      <div class="howto__step reveal">
+        <div class="howto__step-circle">
+          🛍️
+          <div class="howto__step-num">4</div>
+        </div>
+        <h4>Collect or Delivery</h4>
+        <p>Pick up in-store at Northmead or Chilenje, or ask about delivery options.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:60px;">
+      <a href="https://wa.me/260979690009?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" class="btn btn-pink" style="font-size:0.8rem;padding:16px 40px;">
+        Start Your Order on WhatsApp →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__info">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title" style="color:#fff;">Let's Find Your<br/><em>Perfect Piece.</em></h2>
+        <p>Have a question about sizing, availability, or a special occasion outfit? Send us a message and we'll get back to you promptly.</p>
+        <div class="contact__items">
+          <div class="contact__item">
+            <div class="contact__item-icon">💬</div>
+            <div>
+              <div class="contact__item-label">WhatsApp</div>
+              <div class="contact__item-value">
+                <a href="https://wa.me/260979690009" target="_blank">+260 979 690 009</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__item-icon">✉️</div>
+            <div>
+              <div class="contact__item-label">Email</div>
+              <div class="contact__item-value">
+                <a href="mailto:mwiingahambayi@gmail.com">mwiingahambayi@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__item-icon">📷</div>
+            <div>
+              <div class="contact__item-label">Instagram</div>
+              <div class="contact__item-value">
+                <a href="https://www.instagram.com/pinkpearl_couture_zm" target="_blank">@pinkpearl_couture_zm</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact__item">
+            <div class="contact__item-icon">📍</div>
+            <div>
+              <div class="contact__item-label">Store Locations</div>
+              <div class="contact__item-value" style="opacity:0.7;font-size:0.85rem;line-height:1.6;">
+                Northmead — Blessings Mall, Shop S12<br/>
+                Chilenje — Blessings Mall, Upstairs
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send an Enquiry</h3>
+        <div id="formBody">
+          <div class="form-row">
+            <div class="fg">
+              <label for="cf-name">Your Name *</label>
+              <input type="text" id="cf-name" placeholder="Grace Mwila" />
+            </div>
+            <div class="fg">
+              <label for="cf-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="cf-phone" placeholder="+260 97X XXX XXX" />
+            </div>
+          </div>
+          <div class="fg">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" placeholder="you@example.com" />
+          </div>
+          <div class="fg">
+            <label for="cf-interest">I'm interested in…</label>
+            <select id="cf-interest">
+              <option value="" disabled selected>Select a category…</option>
+              <option>Evening / Occasion Dresses</option>
+              <option>Casual Everyday Dresses</option>
+              <option>Silk Gowns</option>
+              <option>Sequin &amp; Party Wear</option>
+              <option>Tweed &amp; Structured Pieces</option>
+              <option>I have a specific item in mind</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="cf-msg">Tell us more *</label>
+            <textarea id="cf-msg" placeholder="E.g. I saw the black velvet dress on your Facebook page and would like to know if it comes in size 12…"></textarea>
+          </div>
+          <button class="btn btn-pink" style="width:100%;justify-content:center;padding:16px;" onclick="submitEnquiry()">
+            Send Enquiry ✦
+          </button>
+          <p style="font-size:0.72rem;opacity:0.4;text-align:center;margin-top:12px;">
+            Or WhatsApp us directly at <strong>+260 979 690 009</strong>
+          </p>
+        </div>
+        <div id="form-success">
+          <div class="check">💌</div>
+          <h4>Enquiry Sent!</h4>
+          <p>Thank you for reaching out. We'll respond on WhatsApp or email as soon as possible.<br/><br/>For faster response, message us directly on WhatsApp.</p>
+          <br/>
+          <a href="https://wa.me/260979690009" target="_blank" class="btn btn-pink" style="margin:0 auto;">💬 WhatsApp Us Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">PINK <span>PEARL</span></div>
+        <div class="footer__brand-sub">Couture ZM · The Mwiinga Store</div>
+        <p class="footer__brand-desc">
+          Lusaka's home of feminine fashion. Dresses, gowns, and occasion wear for the woman who refuses to be ordinary. Two locations in Lusaka, Zambia.
+        </p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/share/17P2yQg5Ns/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.instagram.com/pinkpearl_couture_zm" target="_blank" title="Instagram">📷</a>
+          <a href="https://wa.me/260979690009" target="_blank" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="#catalogue">Collection</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#locations">Store Locations</a></li>
+          <li><a href="#order">How to Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <ul class="footer__links">
+          <li><a href="https://wa.me/260979690009">+260 979 690 009</a></li>
+          <li><a href="mailto:mwiingahambayi@gmail.com">mwiingahambayi@gmail.com</a></li>
+          <li style="margin-top:8px;font-size:0.8rem;">Northmead Blessings Mall, Shop S12</li>
+          <li style="font-size:0.8rem;">Chilenje Blessings Mall, Upstairs</li>
+          <li style="font-size:0.8rem;">Lusaka, Zambia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Pink Pearl Couture ZM. All rights reserved.</span>
+      <span>Lusaka, Zambia · pinkpearl_couture_zm</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="wa-float">
+  <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20your%20collection" target="_blank">
+    💬 <span class="wa-float-label">Order on WhatsApp</span>
+  </a>
+</div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
