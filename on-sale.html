@@ -3,154 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>🔥 ON SALE! — Pink Pearl Couture ZM</title>
-
-  <meta
-    name="description"
-    content="Shop currently available dresses, shoes, handbags, suits and more at Pink Pearl Couture ZM."
-  />
-
+  <title>🔥 On Sale Now — Pink Pearl Couture ZM · The Mwiinga Store</title>
+  <meta name="description" content="Shop currently available dresses, shoes, handbags, suits and more at Pink Pearl Couture ZM. Two Lusaka locations: Northmead & Chilenje." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/on-sale.css" />
 </head>
-
 <body>
 
-    <!-- ON SALE NAVBAR -->
-<nav class="sale-nav">
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  ✦ Locations in Lusaka — Northmead &amp; Chilenje ✦ WhatsApp for Orders: +260 979 690 009 ✦
+</div>
 
-  <div class="sale-nav__inner">
-
-    <a href="./index.html" class="sale-nav__logo">
-      PINK <span>PEARL</span>
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo">
+      <span class="nav__logo-main">PINK <span>PEARL</span></span>
+      <span class="nav__logo-sub">Couture ZM · The Mwiinga Store</span>
     </a>
-
-    <div class="sale-nav__links">
-
-      <a href="./index.html">
-        Home
+    <ul class="nav__links">
+      <li><a href="./on-sale.html" class="nav__active">🔥 ON SALE!</a></li>
+      <li><a href="./index.html#catalogue">Collection</a></li>
+      <li><a href="./index.html#about">About</a></li>
+      <li><a href="./index.html#locations">Stores</a></li>
+      <li><a href="./index.html#order">How to Order</a></li>
+      <li><a href="./index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="https://wa.me/260979690009" target="_blank" class="nav__wa">
+        <span>💬</span> WhatsApp Us
       </a>
-
-      <a href="./index.html#catalogue">
-        Collection
-      </a>
-
-      <a href="./index.html#about">
-        About
-      </a>
-
-      <a href="./index.html#locations">
-        Stores
-      </a>
-
-      <a href="./index.html#contact">
-        Contact
-      </a>
-
     </div>
-
-    <a
-      href="https://wa.me/260979690009"
-      target="_blank"
-      class="sale-nav__cta"
-    >
-      💬 WhatsApp
-    </a>
-
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-
+  <ul class="mobile-nav" id="mobileNav">
+    <li><a href="./on-sale.html">🔥 ON SALE!</a></li>
+    <li><a href="./index.html#catalogue">Collection</a></li>
+    <li><a href="./index.html#about">About</a></li>
+    <li><a href="./index.html#locations">Stores</a></li>
+    <li><a href="./index.html#order">How to Order</a></li>
+    <li><a href="./index.html#contact">Contact</a></li>
+    <li>
+      <a href="https://wa.me/260979690009" target="_blank"
+         style="display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 24px;border-radius:2px;font-weight:600;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;">
+        💬 WhatsApp: +260 979 690 009
+      </a>
+    </li>
+  </ul>
 </nav>
 
-<div class="sale-hero">
+<!-- HERO -->
+<header class="sale-hero">
   <div class="sale-hero__overlay"></div>
-
   <div class="sale-hero__content">
-    <div class="sale-pill">
-      LIMITED STOCK · READY TO BUY
-    </div>
-
-    <h1>
-      🔥 HOT RIGHT NOW!
-    </h1>
-
-    <p>
-      Browse currently available fashion pieces in-store before they're gone...
+    <div class="sale-pill">LIMITED STOCK · READY TO BUY</div>
+    <h1 class="sale-hero__title">🔥 Hot Right<br/><em>Now.</em></h1>
+    <p class="sale-hero__sub">
+      Browse currently available fashion pieces in-store before they're gone — Northmead &amp; Chilenje, Lusaka.
     </p>
+    <div class="sale-hero__ctas">
+      <a href="#stock" class="btn btn-pink">Browse All Stock</a>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20please%20send%20me%20your%20latest%20catalogue" target="_blank" class="btn btn-ghost">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span class="ticker__item">🔥 BEST SELLERS SELLING FAST</span>
+    <span class="ticker__item">✨ New Luxury Dresses Just Arrived</span>
+    <span class="ticker__item">💗 Viral Pink Collection In Store Now</span>
+    <span class="ticker__item">🖤 Elegant Evening Pieces Available Today</span>
+    <span class="ticker__item">👠 Trending Heels &amp; Luxury Shoes</span>
+    <span class="ticker__item">👜 Handbags Customers Keep Asking For</span>
+    <span class="ticker__item">💎 Premium Looks Without Premium Prices</span>
+    <span class="ticker__item">🌸 New Feminine Styles Added Daily</span>
+    <span class="ticker__item">🔥 Limited Pieces — Once Gone, They're Gone</span>
+    <span class="ticker__item">✨ Ready-To-Wear Looks Available Right Now</span>
+    <span class="ticker__item">💬 Shop Instantly Via WhatsApp</span>
+    <span class="ticker__item">📍 Visit Our Northmead &amp; Chilenje Stores</span>
+    <span class="ticker__item">🔥 BEST SELLERS SELLING FAST</span>
+    <span class="ticker__item">✨ New Luxury Dresses Just Arrived</span>
+    <span class="ticker__item">💗 Viral Pink Collection In Store Now</span>
+    <span class="ticker__item">🖤 Elegant Evening Pieces Available Today</span>
+    <span class="ticker__item">👠 Trending Heels &amp; Luxury Shoes</span>
+    <span class="ticker__item">👜 Handbags Customers Keep Asking For</span>
+    <span class="ticker__item">💎 Premium Looks Without Premium Prices</span>
+    <span class="ticker__item">🌸 New Feminine Styles Added Daily</span>
+    <span class="ticker__item">🔥 Limited Pieces — Once Gone, They're Gone</span>
+    <span class="ticker__item">✨ Ready-To-Wear Looks Available Right Now</span>
+    <span class="ticker__item">💬 Shop Instantly Via WhatsApp</span>
+    <span class="ticker__item">📍 Visit Our Northmead &amp; Chilenje Stores</span>
   </div>
 </div>
 
-<section class="sale-search">
+<!-- STOCK SECTION -->
+<section class="catalogue stock-section" id="stock">
+  <div class="container">
 
-  <div class="sale-search__top">
-
-    <div class="sale-search__title">
-      Search Available Stock
+    <div class="catalogue__header">
+      <div class="catalogue__intro">
+        <div class="section-label">Available Now</div>
+        <h2 class="section-title">In-Store <em>Stock</em></h2>
+        <p>Every piece below is live stock at one of our Lusaka stores. Filter by category, then tap to enquire via WhatsApp.</p>
+      </div>
+      <a href="./index.html#catalogue" class="btn btn-outline-dark">← Back to Collection</a>
     </div>
 
-    <div class="sale-search__subtitle">
-      Filter by category
+    <div class="stock-search-bar">
+      <span class="stock-search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search e.g. 'velvet dress', 'heels'…" autocomplete="off" />
+    </div>
+
+    <div class="catalogue__filters">
+      <button class="filter-btn active" onclick="setCategory(this,'all')">All Pieces</button>
+      <button class="filter-btn" onclick="setCategory(this,'dresses')">Dresses</button>
+      <button class="filter-btn" onclick="setCategory(this,'tops')">Tops</button>
+      <button class="filter-btn" onclick="setCategory(this,'skirts')">Skirts / Bottoms</button>
+      <button class="filter-btn" onclick="setCategory(this,'suits')">Suits</button>
+      <button class="filter-btn" onclick="setCategory(this,'bags')">Handbags</button>
+      <button class="filter-btn" onclick="setCategory(this,'shoes')">Shoes</button>
+      <button class="filter-btn" onclick="setCategory(this,'sandals')">Sandals &amp; Slides</button>
+    </div>
+
+    <p class="stock-count" id="stockCount"></p>
+    <div class="catalogue__grid" id="stockGrid"></div>
+
+    <div class="stock-empty" id="stockEmpty" style="display:none;">
+      <div class="stock-empty__icon">🕵️</div>
+      <h3>Nothing found</h3>
+      <p>Try a different search, or WhatsApp us — we update stock daily.</p>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20do%20you%20have%20this%20in%20stock%3F" target="_blank" class="btn btn-pink" style="margin-top:24px;">💬 Ask on WhatsApp</a>
+    </div>
+
+    <div style="text-align:center; margin-top:64px;">
+      <p style="font-size:0.82rem;opacity:0.5;margin-bottom:20px;letter-spacing:0.1em;text-transform:uppercase;">New pieces posted daily on Facebook · Message us to see the latest</p>
+      <a href="https://wa.me/260979690009?text=Hi%2C%20please%20send%20me%20your%20latest%20catalogue" target="_blank" class="btn btn-pink">
+        💬 Request Full Catalogue on WhatsApp
+      </a>
     </div>
 
   </div>
-
-  <div class="filters">
-
-    <label class="filter-item">
-      <input type="checkbox" value="dresses" checked />
-      Dresses
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="tops" checked />
-      Tops
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="skirts" checked />
-      Skirts / Bottoms
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="suits" checked />
-      Suits
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="bags" checked />
-      Handbags & Purses
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="shoes" checked />
-      Shoes
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="sandals" checked />
-      Sandals & Slides
-    </label>
-
-    <label class="filter-item">
-      <input type="checkbox" value="all" checked />
-      All
-    </label>
-
-  </div>
-
-  <div class="stock-grid" id="stockGrid"></div>
-
 </section>
 
-<script src="./assets/data/stock.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">PINK <span>PEARL</span></div>
+        <div class="footer__brand-sub">Couture ZM · The Mwiinga Store</div>
+        <p class="footer__brand-desc">
+          Lusaka's home of feminine fashion. Dresses, gowns, and occasion wear for the woman who refuses to be ordinary. Two locations in Lusaka, Zambia.
+        </p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/share/17P2yQg5Ns/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.instagram.com/pinkpearl_couture_zm" target="_blank" title="Instagram">📷</a>
+          <a href="https://wa.me/260979690009" target="_blank" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Quick Links</div>
+        <ul class="footer__links">
+          <li><a href="./on-sale.html">🔥 ON SALE!</a></li>
+          <li><a href="./index.html#catalogue">Collection</a></li>
+          <li><a href="./index.html#about">About Us</a></li>
+          <li><a href="./index.html#locations">Store Locations</a></li>
+          <li><a href="./index.html#order">How to Order</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <ul class="footer__links">
+          <li><a href="https://wa.me/260979690009">+260 979 690 009</a></li>
+          <li><a href="mailto:mwiingahambayi@gmail.com">mwiingahambayi@gmail.com</a></li>
+          <li style="margin-top:8px;font-size:0.8rem;">Northmead Blessings Mall, Shop S12</li>
+          <li style="font-size:0.8rem;">Chilenje Blessings Mall, Upstairs</li>
+          <li style="font-size:0.8rem;">Lusaka, Zambia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Pink Pearl Couture ZM. All rights reserved.</span>
+      <span>Lusaka, Zambia · pinkpearl_couture_ZM</span>
+    </div>
+  </div>
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/260979690009?text=Hi%2C%20I%27m%20interested%20in%20your%20collection" target="_blank">
+    💬 <span class="wa-float-label">Order on WhatsApp</span>
+  </a>
+</div>
+
+<!-- Load DB client first, then page logic, then shared nav/animations -->
+<script src="./assets/data/supabase-client.js"></script>
 <script src="./assets/js/on-sale.js"></script>
+<script src="./assets/js/main.js"></script>
 
 </body>
 </html>

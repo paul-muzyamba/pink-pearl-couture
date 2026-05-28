@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Pink Pearl Couture ZM</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/admin.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════ LOGIN SCREEN ═══════════════ -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo__main">PINK <span>PEARL</span></div>
+      <div class="login-logo__sub">Admin Dashboard</div>
+    </div>
+    <div id="loginError" class="login-error" style="display:none;"></div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="admin@pinkpearlcouture.com" autocomplete="email" />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" />
+    </div>
+    <button class="btn-primary full" id="loginBtn" onclick="doLogin()">Sign In</button>
+    <p class="login-hint">Access restricted to authorised admins only.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DASHBOARD ══════════════════ -->
+<div id="dashboard" class="dashboard" style="display:none;">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-main">PINK <span>PEARL</span></div>
+      <div class="sidebar__logo-sub">Admin</div>
+    </div>
+    <nav class="sidebar__nav">
+      <button class="sidebar__btn active" id="navStock"    onclick="showView('stock')">📦 Stock</button>
+      <button class="sidebar__btn"        id="navAdd"      onclick="showView('add')">➕ Add Item</button>
+    </nav>
+    <div class="sidebar__footer">
+      <div class="sidebar__admin-email" id="adminEmail"></div>
+      <button class="sidebar__signout" onclick="doSignOut()">Sign Out</button>
+      <a href="./on-sale.html" target="_blank" class="sidebar__viewsite">↗ View Live Site</a>
+    </div>
+  </aside>
+
+  <!-- Main area -->
+  <main class="main">
+
+    <!-- Stats bar -->
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-card">
+        <div class="stat-card__num" id="statTotal">—</div>
+        <div class="stat-card__label">Total Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" id="statInStock">—</div>
+        <div class="stat-card__label">In Stock</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" id="statOutStock">—</div>
+        <div class="stat-card__label">Sold Out</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" id="statCategories">—</div>
+        <div class="stat-card__label">Categories</div>
+      </div>
+    </div>
+
+    <!-- ── STOCK VIEW ─────────────────────────────────────── -->
+    <div id="viewStock" class="view">
+      <div class="view-header">
+        <h1>Stock List</h1>
+        <div class="view-header__actions">
+          <input type="text" id="adminSearch" class="admin-search" placeholder="🔍  Search items…" oninput="filterAdminList()" />
+          <select id="adminCatFilter" class="admin-select" onchange="filterAdminList()">
+            <option value="all">All Categories</option>
+            <option value="dresses">Dresses</option>
+            <option value="tops">Tops</option>
+            <option value="skirts">Skirts / Bottoms</option>
+            <option value="suits">Suits</option>
+            <option value="bags">Handbags</option>
+            <option value="shoes">Shoes</option>
+            <option value="sandals">Sandals &amp; Slides</option>
+          </select>
+        </div>
+      </div>
+      <div id="stockList" class="stock-list"></div>
+    </div>
+
+    <!-- ── ADD / EDIT FORM VIEW ──────────────────────────── -->
+    <div id="viewAdd" class="view" style="display:none;">
+      <div class="view-header">
+        <h1 id="formTitle">Add New Item</h1>
+        <button class="btn-ghost-sm" onclick="cancelEdit()">✕ Cancel</button>
+      </div>
+
+      <div class="form-card">
+        <input type="hidden" id="editId" value="" />
+
+        <div class="form-row">
+          <div class="field">
+            <label>Product Name <span class="req">*</span></label>
+            <input type="text" id="fName" placeholder="e.g. Black Velvet Dress" />
+          </div>
+          <div class="field">
+            <label>Category <span class="req">*</span></label>
+            <select id="fCategory">
+              <option value="">— Select —</option>
+              <option value="dresses">Dresses</option>
+              <option value="tops">Tops</option>
+              <option value="skirts">Skirts / Bottoms</option>
+              <option value="suits">Suits</option>
+              <option value="bags">Handbags</option>
+              <option value="shoes">Shoes</option>
+              <option value="sandals">Sandals &amp; Slides</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Price (ZMW) <span class="req">*</span></label>
+            <div class="input-prefix">
+              <span>K</span>
+              <input type="number" id="fPrice" placeholder="450" min="0" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Store Location</label>
+            <select id="fLocation">
+              <option value="both">Both Stores</option>
+              <option value="northmead">Northmead Only</option>
+              <option value="chilenje">Chilenje Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Badge Text</label>
+            <input type="text" id="fBadge" placeholder='e.g. "New In", "Best Seller", "Last 1"' />
+          </div>
+          <div class="field">
+            <label>Badge Style</label>
+            <select id="fBadgeType">
+              <option value="">Default (dark)</option>
+              <option value="gold">Gold</option>
+              <option value="sale">Sale (pink)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Card Background</label>
+            <select id="fBgClass">
+              <option value="">Light (default)</option>
+              <option value="bg-ink">Ink (black)</option>
+              <option value="bg-pink">Pink</option>
+              <option value="bg-blush">Blush</option>
+              <option value="bg-dusty">Dusty Rose</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Display Order</label>
+            <input type="number" id="fSortOrder" placeholder="0 = first" min="0" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Colour Dots <span class="field-hint">(comma-separated hex values)</span></label>
+          <input type="text" id="fColors" placeholder='e.g. #1a1818, #c4506a, #fff' />
+          <div class="color-preview" id="colorPreview"></div>
+        </div>
+
+        <!-- Emoji fallback (used when no photo is uploaded) -->
+        <div class="field">
+          <label>Emoji (used if no photo uploaded)</label>
+          <input type="text" id="fEmoji" placeholder="e.g. 👗 🖤 💗 👠 👜" maxlength="4" />
+        </div>
+
+        <!-- Photo upload -->
+        <div class="field">
+          <label>Product Photo</label>
+          <div class="upload-area" id="uploadArea" onclick="document.getElementById('fPhoto').click()">
+            <div class="upload-area__inner" id="uploadInner">
+              <div class="upload-area__icon">📸</div>
+              <div class="upload-area__text">Tap to upload from camera roll or file picker</div>
+              <div class="upload-area__hint">JPG or PNG · Max 10MB · Auto-optimised for web</div>
+            </div>
+          </div>
+          <input type="file" id="fPhoto" accept="image/*" style="display:none;" onchange="previewPhoto(this)" />
+          <div id="currentPhoto" class="current-photo" style="display:none;">
+            <img id="currentPhotoImg" src="" alt="Current photo" />
+            <button class="remove-photo" onclick="removePhoto()">✕ Remove</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="toggle-label">
+            <span>In Stock</span>
+            <div class="toggle">
+              <input type="checkbox" id="fInStock" checked />
+              <span class="toggle__slider"></span>
+            </div>
+          </label>
+          <p class="field-hint" style="margin-top:8px;">Toggle off when this piece sells out — it hides from the public site instantly.</p>
+        </div>
+
+        <div id="formError"   class="form-error"   style="display:none;"></div>
+        <div id="formSuccess" class="form-success" style="display:none;"></div>
+
+        <div class="form-actions">
+          <button class="btn-primary" id="saveBtn" onclick="saveItem()">
+            <span id="saveBtnText">💾 Save Item</span>
+          </button>
+          <button class="btn-ghost" onclick="cancelEdit()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════ CONFIRM DIALOG ═════════════ -->
+<div id="confirmOverlay" class="confirm-overlay" style="display:none;">
+  <div class="confirm-dialog">
+    <div class="confirm-dialog__icon">🗑️</div>
+    <h3 id="confirmTitle">Delete this item?</h3>
+    <p id="confirmMsg">This action cannot be undone.</p>
+    <div class="confirm-actions">
+      <button class="btn-danger"  id="confirmYes">Yes, Delete</button>
+      <button class="btn-ghost"   onclick="closeConfirm()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/data/supabase-client.js"></script>
+<script src="./assets/js/admin.js"></script>
+</body>
+</html>
