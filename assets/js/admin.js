@@ -5,8 +5,8 @@
    Depends on: supabase-client.js (loaded before this file)
 ================================================================ */
 
-const CLOUDINARY_CLOUD_NAME    = 'https://bcvkbdjjigmrkaqggpgd.supabase.co/rest/v1/';
-const CLOUDINARY_UPLOAD_PRESET = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjdmtiZGpqaWdtcmthcWdncGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5NTM5MjksImV4cCI6MjA5NTUyOTkyOX0.lNGdIzsY3U4PguIB9LWnTKU-4cd6oT-YDSbI46Wh3rA'; // unsigned preset
+const CLOUDINARY_CLOUD_NAME    = 'dowrrjvdv';
+const CLOUDINARY_UPLOAD_PRESET = 'pink-pearl-couture'; // unsigned preset
 
 /* ── Session state ──────────────────────────────────────────── */
 let SESSION       = null;   // { access_token, user }

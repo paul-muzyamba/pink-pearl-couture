@@ -3,7 +3,7 @@
    File: assets/js/on-sale.js
    
 /* ── Cloudinary config ──────────────────────────────────────── */
-const CLOUD_NAME    = 'YOUR_CLOUDINARY_CLOUD_NAME'; // e.g. 'dxyz123abc'
+const CLOUD_NAME    = 'dowrrjvdv'; // e.g. 'dxyz123abc'
 
 /* ── State ──────────────────────────────────────────────────── */
 let activeCategory = 'all';
