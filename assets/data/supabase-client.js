@@ -1,17 +1,10 @@
 /* ================================================================
    PINK PEARL COUTURE ZM — SUPABASE CLIENT
    File: assets/data/supabase-client.js
-
-   Single source of truth for all database communication.
-   Both the public storefront (on-sale.js) and the admin panel
-   (admin.js) import from this file only.
-
-   SETUP: Replace the two constants below with your real values
-   from Supabase → Project Settings → API.
 ================================================================ */
 
-const SUPABASE_URL  = 'https://YOUR_PROJECT_REF.supabase.co';
-const SUPABASE_ANON = 'YOUR_ANON_PUBLIC_KEY';
+const SUPABASE_URL  = 'https://bcvkbdjjigmrkaqggpgd.supabase.co/rest/v1/';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjdmtiZGpqaWdtcmthcWdncGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5NTM5MjksImV4cCI6MjA5NTUyOTkyOX0.lNGdIzsY3U4PguIB9LWnTKU-4cd6oT-YDSbI46Wh3rA';
 
 /* ── Internal helper ─────────────────────────────────────────── */
 async function _request(path, options = {}) {

@@ -3,14 +3,10 @@
    File: assets/js/admin.js
 
    Depends on: supabase-client.js (loaded before this file)
-
-   ── CLOUDINARY SETUP ──────────────────────────────────────────
-   Replace the two constants below with your real Cloudinary values.
-   Get them from: cloudinary.com → Settings → Upload Presets
 ================================================================ */
 
-const CLOUDINARY_CLOUD_NAME    = 'YOUR_CLOUDINARY_CLOUD_NAME';
-const CLOUDINARY_UPLOAD_PRESET = 'YOUR_CLOUDINARY_UPLOAD_PRESET'; // unsigned preset
+const CLOUDINARY_CLOUD_NAME    = 'https://bcvkbdjjigmrkaqggpgd.supabase.co/rest/v1/';
+const CLOUDINARY_UPLOAD_PRESET = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjdmtiZGpqaWdtcmthcWdncGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5NTM5MjksImV4cCI6MjA5NTUyOTkyOX0.lNGdIzsY3U4PguIB9LWnTKU-4cd6oT-YDSbI46Wh3rA'; // unsigned preset
 
 /* ── Session state ──────────────────────────────────────────── */
 let SESSION       = null;   // { access_token, user }

@@ -1,11 +1,7 @@
 /* ================================================================
    PINK PEARL COUTURE ZM — ON SALE PAGE LOGIC (Supabase version)
    File: assets/js/on-sale.js
-
-   Replaces the old stock.js flat-array version entirely.
-   Depends on: supabase-client.js (loaded before this file)
-================================================================ */
-
+   
 /* ── Cloudinary config ──────────────────────────────────────── */
 const CLOUD_NAME    = 'YOUR_CLOUDINARY_CLOUD_NAME'; // e.g. 'dxyz123abc'
 
