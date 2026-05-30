@@ -14,6 +14,20 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  // Force reel video muted at all times
+  const reelVideo = document.getElementById('reelVideo');
+  if (reelVideo) {
+    reelVideo.muted = true;
+    reelVideo.volume = 0;
+    reelVideo.addEventListener('volumechange', () => {
+      if (!reelVideo.muted) { reelVideo.muted = true; reelVideo.volume = 0; }
+    });
+    reelVideo.addEventListener('play', () => {
+      reelVideo.muted = true;
+      reelVideo.volume = 0;
+    });
+  }
+
   // Catalogue filter
   function filterCat(btn, cat) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

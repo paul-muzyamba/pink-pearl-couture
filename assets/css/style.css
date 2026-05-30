@@ -320,26 +320,6 @@
       position: relative;
     }
     .hero__grid-item:nth-child(4) .hero__grid-emoji { font-size: 5rem; opacity: 0.5; }
-    .hero__tag {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
-      padding: 14px 22px;
-      border-radius: 2px;
-      text-align: right;
-      z-index: 10;
-    }
-    .hero__tag-num {
-      font-family: var(--ff-display);
-      font-size: 2rem;
-      color: var(--gold-light);
-      display: block;
-      line-height: 1;
-    }
-    .hero__tag-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.55; }
 
     /* ============================================================
        TICKER / MARQUEE
@@ -978,6 +958,228 @@
     /* ============================================================
        RESPONSIVE
     ============================================================ */
+    /* ============================================================
+       REAL IMAGE INTEGRATIONS — Pink Pearl Gallery
+    ============================================================ */
+
+    /* ── Hero Grid Photos ── */
+    .hero__grid-item {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__grid-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: 0.82;
+      transition: opacity 0.5s var(--ease), transform 0.7s var(--ease);
+      display: block;
+    }
+    .hero__grid-item:nth-child(1) .hero__grid-photo { object-position: center 42%; }
+    .hero__grid-item:nth-child(2) .hero__grid-photo { object-position: center 28%; }
+    .hero__grid-item:nth-child(3) .hero__grid-photo { object-position: center 35%; }
+    .hero__grid-item:nth-child(4) .hero__grid-photo { object-position: center 30%; }
+    .hero__grid-item:hover .hero__grid-photo {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+    /* Keep fabric textures as subtle overlays on top of photos */
+    .hero__grid-item::before {
+      z-index: 1;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── Product Card Real Photos (index.html) ── */
+    .product-card__img {
+      position: relative;
+    }
+    .product-card__photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.55s var(--ease);
+    }
+    .product-card__photo--center {
+      object-position: center center;
+    }
+    .product-card:hover .product-card__photo {
+      transform: scale(1.06);
+    }
+
+    /* ── About Section Masonry Photos ── */
+    .about__photo-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      border-radius: 2px;
+      opacity: 0.88;
+      transition: opacity 0.45s var(--ease), transform 0.6s var(--ease);
+    }
+    .about__photo:hover .about__photo-img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    /* ── Gallery Strip (new section) ── */
+    .gallery-strip {
+      overflow: hidden;
+      background: var(--black);
+      height: 360px;
+      position: relative;
+    }
+    .gallery-strip__inner {
+      display: flex;
+      height: 100%;
+      gap: 3px;
+    }
+    .gallery-strip__item {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: flex 0.45s var(--ease);
+    }
+    .gallery-strip__item:nth-child(1) { flex: 1.5; }
+    .gallery-strip__item:nth-child(1) .gallery-strip__img { object-position: center 35%; }
+    .gallery-strip__item:nth-child(3) .gallery-strip__img { object-position: center 40%; }
+    .gallery-strip__item:nth-child(5) .gallery-strip__img { object-position: center 30%; }
+    .gallery-strip__item:hover {
+      flex: 1.8;
+    }
+    .gallery-strip__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.6s var(--ease), filter 0.4s;
+    }
+    .gallery-strip__item:hover .gallery-strip__img {
+      transform: scale(1.05);
+      filter: brightness(1.06) saturate(1.08);
+    }
+    .gallery-strip__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        rgba(10,9,9,0.55) 0%,
+        rgba(10,9,9,0.05) 55%,
+        transparent 100%);
+      opacity: 0;
+      transition: opacity 0.35s;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px 14px;
+    }
+    .gallery-strip__item:hover .gallery-strip__overlay {
+      opacity: 1;
+    }
+    .gallery-strip__wa {
+      background: #25d366;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      padding: 8px 14px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+    .gallery-strip__wa:hover { opacity: 0.85; }
+
+    /* ── Video Reel Section ── */
+    .reel-section {
+      padding: 100px 0;
+      background: var(--offwhite);
+    }
+    .reel-section__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .reel-section__video-wrap {
+      position: relative;
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      max-height: 580px;
+      box-shadow: 0 24px 64px rgba(10,9,9,0.16);
+    }
+    .reel-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .reel-section__badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .reel-section__content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .reel-section__content p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: #3a3030;
+      max-width: 420px;
+    }
+
+    /* Subtle image load polish */
+    .hero__grid-photo,
+    .gallery-strip__img,
+    .product-card__photo,
+    .about__photo-img,
+    .reel-video {
+      background: rgba(10, 9, 9, 0.06);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__grid-photo,
+      .gallery-strip__img,
+      .product-card__photo,
+      .about__photo-img,
+      .gallery-strip__item,
+      .ticker__track {
+        transition: none !important;
+        animation: none !important;
+      }
+      .hero__grid-item:hover .hero__grid-photo,
+      .product-card:hover .product-card__photo,
+      .gallery-strip__item:hover .gallery-strip__img,
+      .about__photo:hover .about__photo-img {
+        transform: none;
+      }
+    }
+
     @media (max-width: 1024px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero__right { height: 400px; }
@@ -987,6 +1189,9 @@
       .contact__inner { grid-template-columns: 1fr; gap: 56px; }
       .howto__steps { grid-template-columns: 1fr 1fr; gap: 48px; }
       .howto__steps::before { display: none; }
+      .reel-section__inner { grid-template-columns: 1fr; gap: 48px; }
+      .reel-section__video-wrap { max-height: 420px; }
+      .gallery-strip { height: 260px; }
     }
 
     @media (max-width: 768px) {
@@ -995,6 +1200,9 @@
       .hero__left { padding: 52px 24px; }
       .hero__right { display: none; }
       .catalogue { padding: 64px 0; }
+      .gallery-strip { height: 200px; }
+      .gallery-strip__item:nth-child(n+6) { display: none; }
+      .reel-section { padding: 64px 0; }
       .locations__grid { grid-template-columns: 1fr; }
       .howto__steps { grid-template-columns: 1fr 1fr; }
       .footer__inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1008,4 +1216,6 @@
       .about__stats { grid-template-columns: 1fr; }
       .contact-form { padding: 32px 24px; }
       .location-card { padding: 36px 28px; }
+      .gallery-strip { height: 160px; }
+      .gallery-strip__item:nth-child(n+5) { display: none; }
     }

@@ -16,9 +16,26 @@
 
 ## What This Is
 
-A live fashion boutique website for Pink Pearl Couture ZM. The public storefront shows currently available in-store stock pulled in real time from a Supabase database. Admins manage all stock — adding items, uploading photos, setting prices, toggling availability — through a password-protected dashboard. Customers order via WhatsApp directly from each product card.
+A live fashion boutique website for Pink Pearl Couture ZM. The homepage showcases the brand with real product photography — hero grid, gallery strip, curated collection cards, about masonry, and an in-store video reel. The On Sale page pulls currently available in-store stock in real time from a Supabase database. Admins manage all stock — adding items, uploading photos, setting prices, toggling availability — through a password-protected dashboard. Customers order via WhatsApp directly from each product card.
 
 No server. No build step. No monthly hosting cost.
+
+---
+
+## Homepage Image Assets
+
+Product photos and the in-store reel live in `assets/images/gallery/`. They are referenced from `index.html` and `on-sale.html` as `./assets/images/gallery/...`.
+
+**Homepage sections using gallery assets:**
+
+| Section | What it shows |
+|---|---|
+| Hero grid | 4 featured looks in a 2×2 photo grid |
+| Gallery strip | 8 expandable panels with WhatsApp enquire links |
+| The Edit | Curated product cards (dresses, bags, shoes) |
+| About | 4-photo editorial masonry grid |
+| In-store reel | Vertical WhatsApp video (`9:16`) |
+| On Sale hero | 4-image cinematic background collage |
 
 ---
 
@@ -30,6 +47,7 @@ No server. No build step. No monthly hosting cost.
 | Database | [Supabase](https://supabase.com) | Free PostgreSQL with REST API, auth, and Row Level Security built in |
 | Images | [Cloudinary](https://cloudinary.com) | Free image hosting with auto-compression and mobile upload |
 | Frontend | Vanilla HTML + CSS + JS | No build step — works anywhere, deploys instantly |
+| Homepage images | Local `assets/images/gallery/` | Real product photos synced from the store gallery folder |
 | Ordering | WhatsApp `wa.me` links | Direct to store, no payment gateway needed |
 
 ---
@@ -37,9 +55,9 @@ No server. No build step. No monthly hosting cost.
 ## Repository Structure
 
 ```
-pink-pearl-couture/
+pink-pearl-couture-prototype/
 │
-├── index.html                  Homepage — brand, collection, locations, contact
+├── index.html                  Homepage — hero, gallery, collection, about, reel, contact
 ├── on-sale.html                Live stock page — pulls from Supabase in real time
 ├── admin.html                  Admin dashboard — login-protected CRUD panel
 ├── supabase-schema.sql         Run once in Supabase SQL Editor to create the DB
@@ -57,7 +75,8 @@ pink-pearl-couture/
     │   └── admin.js            Admin: auth, CRUD, photo upload logic
     ├── data/
     │   └── supabase-client.js  All database + Cloudinary API calls (configure here)
-    └── img/                    Static brand images and hero assets
+    └── images/
+        └── gallery/            Product photos + in-store video (commit before deploy)
 ```
 
 ---
@@ -166,33 +185,22 @@ netlify deploy --prod
 
 ---
 
-### 6. Delete the old stock file
+### 6. Verify
 
-Remove `assets/data/stock.js` from the repository — it has been replaced by `supabase-client.js`.
-
-```bash
-git rm assets/data/stock.js
-git add .
-git commit -m "feat: Netlify deploy + Supabase live database"
-git push origin main
-```
-
-Netlify detects the push and deploys automatically within 60 seconds.
-
----
-
-### 7. Verify
-
-1. Visit `https://pink-pearl-couture.netlify.app/on-sale.html` — products should load from Supabase
-2. Visit `https://pink-pearl-couture.netlify.app/admin.html` — log in with your admin credentials
-3. Add a test product in the admin panel — confirm it appears live on the On Sale page immediately
-4. Mark it as sold out — confirm it disappears from the public page
+1. Visit `https://pink-pearl-couture.netlify.app/` — hero, gallery strip, and product cards should show real photos
+2. Visit `https://pink-pearl-couture.netlify.app/on-sale.html` — products should load from Supabase
+3. Visit `https://pink-pearl-couture.netlify.app/admin.html` — log in with your admin credentials
+4. Add a test product in the admin panel — confirm it appears live on the On Sale page immediately
+5. Mark it as sold out — confirm it disappears from the public page
 
 ---
 
 ## Deploying Updates (every time)
 
 ```bash
+# If you added new local gallery photos, sync them first:
+powershell -ExecutionPolicy Bypass -File .\copy-gallery.ps1
+
 git add .
 git commit -m "your message"
 git push origin main
