@@ -3,8 +3,8 @@
    File: assets/data/supabase-client.js
 ================================================================ */
 
-const SUPABASE_URL  = 'https://bcvkbdjjigmrkaqggpgd.supabase.co/rest/v1/';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjdmtiZGpqaWdtcmthcWdncGdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5NTM5MjksImV4cCI6MjA5NTUyOTkyOX0.lNGdIzsY3U4PguIB9LWnTKU-4cd6oT-YDSbI46Wh3rA';
+const SUPABASE_URL  = 'https://xzyeovhdkntagnzbyuhb.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6eWVvdmhka250YWduemJ5dWhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyMTkwNTksImV4cCI6MjA5NTc5NTA1OX0.GvxSVxGdYFZ-ufNp1Goq4yw8uuh5B54QZw_OO8v51uU';
 
 /* ── Internal helper ─────────────────────────────────────────── */
 async function _request(path, options = {}) {
