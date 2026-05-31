@@ -401,6 +401,10 @@ async function saveItem() {
    DELETE
 ════════════════════════════════════════════════════════════ */
 
+/* ════════════════════════════════════════════════════════════
+   DELETE
+════════════════════════════════════════════════════════════ */
+
 function confirmDelete(id, name) {
   pendingDeleteId = id;
   document.getElementById('confirmMsg').textContent =
@@ -415,10 +419,11 @@ function closeConfirm() {
 }
 
 async function executeDelete() {
+  const idToDelete = pendingDeleteId;   // capture before closeConfirm nulls it
   closeConfirm();
-  if (!pendingDeleteId) return;
+  if (!idToDelete) return;
   try {
-    await window.PPC_DB.adminDeleteProduct(pendingDeleteId, SESSION.access_token);
+    await window.PPC_DB.adminDeleteProduct(idToDelete, SESSION.access_token);
     await loadAdminProducts();
   } catch (e) {
     alert('Delete failed: ' + e.message);
