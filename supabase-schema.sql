@@ -3,7 +3,6 @@
 --  File: supabase-schema.sql
 -- ================================================================
 
-
 -- ── PRODUCTS TABLE ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS products (
 

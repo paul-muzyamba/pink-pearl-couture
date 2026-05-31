@@ -18,8 +18,6 @@
 
 A live fashion boutique website for Pink Pearl Couture ZM. The homepage showcases the brand with real product photography — hero grid, gallery strip, curated collection cards, about masonry, and an in-store video reel. The On Sale page pulls currently available in-store stock in real time from a Supabase database. Admins manage all stock — adding items, uploading photos, setting prices, toggling availability — through a password-protected dashboard. Customers order via WhatsApp directly from each product card.
 
-No server. No build step. No monthly hosting cost.
-
 ---
 
 ## Homepage Image Assets
@@ -43,7 +41,6 @@ Product photos and the in-store reel live in `assets/images/gallery/`. They are 
 
 | Layer | Technology | Why |
 |---|---|---|
-| Hosting | [Netlify](https://netlify.com) | Free, instant deploys from GitHub, global CDN, no commercial restrictions |
 | Database | [Supabase](https://supabase.com) | Free PostgreSQL with REST API, auth, and Row Level Security built in |
 | Images | [Cloudinary](https://cloudinary.com) | Free image hosting with auto-compression and mobile upload |
 | Frontend | Vanilla HTML + CSS + JS | No build step — works anywhere, deploys instantly |
@@ -61,7 +58,6 @@ pink-pearl-couture-prototype/
 ├── on-sale.html                Live stock page — pulls from Supabase in real time
 ├── admin.html                  Admin dashboard — login-protected CRUD panel
 ├── supabase-schema.sql         Run once in Supabase SQL Editor to create the DB
-├── netlify.toml                Netlify deploy config — already set up, do not edit
 ├── README.md                   This file
 │
 └── assets/
@@ -78,20 +74,6 @@ pink-pearl-couture-prototype/
     └── images/
         └── gallery/            Product photos + in-store video (commit before deploy)
 ```
-
----
-
-## Why Netlify
-
-Netlify is the correct deployment choice for this specific project for four reasons:
-
-**1. Truly free with no commercial restrictions.** The Netlify free tier has no clause prohibiting commercial use. GitHub Pages explicitly states it is not intended for commercial use in its terms of service. Since this is a real business selling products, Netlify is the legally clean choice.
-
-**2. Automatic deploys from GitHub.** Connect the repo once. Every `git push` to `main` triggers a live deploy in under 60 seconds — no manual steps, no FTP, no SSH.
-
-**3. Global CDN with HTTPS.** Netlify serves the site from edge nodes worldwide and provisions a free SSL certificate automatically. Customers in Zambia get fast load times. No configuration needed.
-
-**4. Scales without migration.** When the business grows, Netlify Pro adds form handling, serverless functions, and analytics — all without changing hosting provider or restructuring the codebase.
 
 ---
 
@@ -161,55 +143,6 @@ const CLOUD_NAME = 'dxyz123abc'; // same Cloudinary cloud name as above
 
 ---
 
-### 5. Deploy to Netlify
-
-**Option A — Deploy via Netlify UI (recommended for first deploy)**
-
-1. Go to [netlify.com](https://netlify.com) → create a free account
-2. Click **Add new site → Import an existing project**
-3. Select **GitHub** → authorise Netlify → find and select `pink-pearl-couture`
-4. Leave all build settings blank (this site needs no build command or publish directory)
-5. Click **Deploy site**
-6. Netlify assigns a URL like `https://radiant-pearl-abc123.netlify.app`
-7. To set a custom subdomain: **Site settings → Domain management → Options → Edit site name** → change to `pink-pearl-couture`
-8. Your site is now live at `https://pink-pearl-couture.netlify.app`
-
-**Option B — Deploy via Netlify CLI**
-
-```bash
-npm install -g netlify-cli
-netlify login
-netlify init        # follow the prompts, link to your GitHub repo
-netlify deploy --prod
-```
-
----
-
-### 6. Verify
-
-1. Visit `https://pink-pearl-couture.netlify.app/` — hero, gallery strip, and product cards should show real photos
-2. Visit `https://pink-pearl-couture.netlify.app/on-sale.html` — products should load from Supabase
-3. Visit `https://pink-pearl-couture.netlify.app/admin.html` — log in with your admin credentials
-4. Add a test product in the admin panel — confirm it appears live on the On Sale page immediately
-5. Mark it as sold out — confirm it disappears from the public page
-
----
-
-## Deploying Updates (every time)
-
-```bash
-# If you added new local gallery photos, sync them first:
-powershell -ExecutionPolicy Bypass -File .\copy-gallery.ps1
-
-git add .
-git commit -m "your message"
-git push origin main
-```
-
-Netlify auto-deploys. Live in under 60 seconds. No other steps.
-
----
-
 ## Admin Dashboard
 
 Access at `/admin.html`. Not linked from any public page.
@@ -253,20 +186,6 @@ Public visitors can only read rows where `in_stock = true`. Admins can read, wri
 
 ---
 
-## Costs
-
-| | Monthly cost |
-|---|---|
-| Netlify (free tier — 100GB bandwidth, unlimited sites) | $0 |
-| Supabase (free tier — 500MB DB, 50K API calls/month) | $0 |
-| Cloudinary (free tier — 25GB storage, 25GB bandwidth) | $0 |
-| GitHub (public repo) | $0 |
-| **Total** | **$0** |
-
-The free tiers are sufficient for a boutique with hundreds of products and thousands of monthly visitors. When the business grows, Netlify Pro is $19/month and Supabase Pro is $25/month.
-
----
-
 ## Troubleshooting
 
 **Products not loading on On Sale page**
@@ -277,9 +196,6 @@ Confirm the user exists in Supabase → Authentication → Users. Check for typo
 
 **Photo upload fails**
 Confirm `CLOUDINARY_CLOUD_NAME` and `CLOUDINARY_UPLOAD_PRESET` in `admin.js` are correct. Confirm the preset is set to Unsigned in Cloudinary settings.
-
-**Netlify deploy fails**
-Check the Netlify deploy log (Deploys tab in your Netlify dashboard). For this site there is no build command — if Netlify is set to run `npm run build` or similar, clear the build command field in Site settings → Build & deploy → Build settings.
 
 ---
 
