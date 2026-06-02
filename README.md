@@ -5,7 +5,7 @@
 
 **Lusaka's home of feminine fashion.**
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-Visit-c4506a?style=for-the-badge)](https://pink-pearl-couture.netlify.app)
+[![Live Site](https://img.shields.io/badge/Live%20Site-Visit-c4506a?style=for-the-badge)](https://pink-pearl-couture.vercel.app)
 
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Order-25d366?style=for-the-badge)](https://wa.me/260979690009)
 

@@ -260,6 +260,7 @@
       border-color: var(--black);
     }
     .btn-outline-dark:hover { background: var(--black); color: #fff; }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
 
     .hero__right {
       position: relative;
@@ -555,6 +556,7 @@
     }
     .about__photo-inner {
       padding-top: 130%;
+      position: relative;
       background: #1a0f12;
       display: flex;
       align-items: center;
@@ -824,6 +826,7 @@
       border: 1px solid rgba(10,9,9,0.15);
       border-radius: 2px;
       background: var(--pearl);
+      font-family: var(--ff-body);
       font-size: 0.9rem;
       font-weight: 300;
       outline: none;
