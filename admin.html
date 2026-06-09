@@ -35,6 +35,25 @@
 <!-- ═══════════════════════════════ DASHBOARD ══════════════════ -->
 <div id="dashboard" class="dashboard" style="display:none;">
 
+  <!-- Mobile Top Navbar (visible on screens ≤ 680px only) -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="mobile-nav__logo">
+      PINK <span>PEARL</span>
+      <em>Admin</em>
+    </div>
+    <button class="mobile-nav__add" onclick="showView('add'); closeMobileNav();" aria-label="Add new item" title="Add new item">
+      +
+    </button>
+  </div>
+
+  <!-- Sidebar backdrop overlay (mobile only) -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileNav()"></div>
+
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar__logo">
@@ -42,8 +61,8 @@
       <div class="sidebar__logo-sub">Admin</div>
     </div>
     <nav class="sidebar__nav">
-      <button class="sidebar__btn active" id="navStock"    onclick="showView('stock')">📦 Stock</button>
-      <button class="sidebar__btn"        id="navAdd"      onclick="showView('add')">➕ Add Item</button>
+      <button class="sidebar__btn active" id="navStock" onclick="showView('stock'); closeMobileNav()">📦 Stock</button>
+      <button class="sidebar__btn"        id="navAdd"   onclick="showView('add'); closeMobileNav()">➕ Add Item</button>
     </nav>
     <div class="sidebar__footer">
       <div class="sidebar__admin-email" id="adminEmail"></div>

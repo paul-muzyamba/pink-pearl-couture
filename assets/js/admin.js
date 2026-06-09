@@ -125,6 +125,36 @@ function showView(view) {
 function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
 /* ════════════════════════════════════════════════════════════
+   MOBILE NAV TOGGLE
+════════════════════════════════════════════════════════════ */
+
+function toggleMobileNav() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const mobileNav = document.getElementById('mobileNav');
+  const isOpen = sidebar.classList.contains('open');
+
+  if (isOpen) {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+    mobileNav.classList.remove('open');
+  } else {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+    mobileNav.classList.add('open');
+  }
+}
+
+function closeMobileNav() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const mobileNav = document.getElementById('mobileNav');
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+  mobileNav.classList.remove('open');
+}
+
+/* ════════════════════════════════════════════════════════════
    LOAD + RENDER PRODUCT LIST
 ════════════════════════════════════════════════════════════ */
 
@@ -401,10 +431,6 @@ async function saveItem() {
    DELETE
 ════════════════════════════════════════════════════════════ */
 
-/* ════════════════════════════════════════════════════════════
-   DELETE
-════════════════════════════════════════════════════════════ */
-
 function confirmDelete(id, name) {
   pendingDeleteId = id;
   document.getElementById('confirmMsg').textContent =
@@ -458,15 +484,17 @@ function hideFormMessages() {
 }
 
 /* Expose to window for inline onclick handlers */
-window.showView      = showView;
-window.doLogin       = doLogin;
-window.doSignOut     = doSignOut;
-window.startEdit     = startEdit;
-window.cancelEdit    = cancelEdit;
-window.saveItem      = saveItem;
-window.toggleStock   = toggleStock;
-window.confirmDelete = confirmDelete;
-window.closeConfirm  = closeConfirm;
-window.removePhoto   = removePhoto;
-window.previewPhoto  = previewPhoto;
+window.showView        = showView;
+window.doLogin         = doLogin;
+window.doSignOut       = doSignOut;
+window.startEdit       = startEdit;
+window.cancelEdit      = cancelEdit;
+window.saveItem        = saveItem;
+window.toggleStock     = toggleStock;
+window.confirmDelete   = confirmDelete;
+window.closeConfirm    = closeConfirm;
+window.removePhoto     = removePhoto;
+window.previewPhoto    = previewPhoto;
 window.filterAdminList = filterAdminList;
+window.toggleMobileNav = toggleMobileNav;
+window.closeMobileNav  = closeMobileNav;
