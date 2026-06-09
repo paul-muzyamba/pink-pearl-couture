@@ -15,6 +15,38 @@ let pendingDeleteId = null; // UUID awaiting confirm dialog
 let newPhotoFile  = null;   // File object from photo input
 let newPhotoURL   = null;   // Cloudinary URL after upload
 
+/* ── Sidebar toggle (mobile) ───────────────────────────────── */
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const btn = document.getElementById('navToggle');
+  sidebar.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+function closeSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  const btn = document.getElementById('navToggle');
+  sidebar.classList.remove('open');
+  btn.classList.remove('open');
+}
+
+/* Close sidebar when a nav button is clicked on mobile */
+document.querySelectorAll('.sidebar__btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (window.innerWidth <= 680) closeSidebar();
+  });
+});
+
+/* Close sidebar when clicking the main area overlay on mobile */
+document.querySelector('.main')?.addEventListener('click', (e) => {
+  if (window.innerWidth <= 680) {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar.classList.contains('open') && !e.target.closest('.nav-toggle')) {
+      closeSidebar();
+    }
+  }
+});
+
 /* ── On load: check sessionStorage for persisted session ────── */
 window.addEventListener('DOMContentLoaded', () => {
   const saved = sessionStorage.getItem('ppc_admin_session');
@@ -123,36 +155,6 @@ function showView(view) {
 }
 
 function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-/* ════════════════════════════════════════════════════════════
-   MOBILE NAV TOGGLE
-════════════════════════════════════════════════════════════ */
-
-function toggleMobileNav() {
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('sidebarOverlay');
-  const mobileNav = document.getElementById('mobileNav');
-  const isOpen = sidebar.classList.contains('open');
-
-  if (isOpen) {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('open');
-    mobileNav.classList.remove('open');
-  } else {
-    sidebar.classList.add('open');
-    overlay.classList.add('open');
-    mobileNav.classList.add('open');
-  }
-}
-
-function closeMobileNav() {
-  const sidebar = document.querySelector('.sidebar');
-  const overlay = document.getElementById('sidebarOverlay');
-  const mobileNav = document.getElementById('mobileNav');
-  sidebar.classList.remove('open');
-  overlay.classList.remove('open');
-  mobileNav.classList.remove('open');
-}
 
 /* ════════════════════════════════════════════════════════════
    LOAD + RENDER PRODUCT LIST
@@ -484,17 +486,15 @@ function hideFormMessages() {
 }
 
 /* Expose to window for inline onclick handlers */
-window.showView        = showView;
-window.doLogin         = doLogin;
-window.doSignOut       = doSignOut;
-window.startEdit       = startEdit;
-window.cancelEdit      = cancelEdit;
-window.saveItem        = saveItem;
-window.toggleStock     = toggleStock;
-window.confirmDelete   = confirmDelete;
-window.closeConfirm    = closeConfirm;
-window.removePhoto     = removePhoto;
-window.previewPhoto    = previewPhoto;
+window.showView      = showView;
+window.doLogin       = doLogin;
+window.doSignOut     = doSignOut;
+window.startEdit     = startEdit;
+window.cancelEdit    = cancelEdit;
+window.saveItem      = saveItem;
+window.toggleStock   = toggleStock;
+window.confirmDelete = confirmDelete;
+window.closeConfirm  = closeConfirm;
+window.removePhoto   = removePhoto;
+window.previewPhoto  = previewPhoto;
 window.filterAdminList = filterAdminList;
-window.toggleMobileNav = toggleMobileNav;
-window.closeMobileNav  = closeMobileNav;
