@@ -1,0 +1,19 @@
+{
+  "name": "Pink Pearl Couture — Barcode Labels",
+  "short_name": "PPC Barcodes",
+  "description": "Assign SKUs and print barcode labels for Pink Pearl Couture stock.",
+  "start_url": "./barcode-labels.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f2f4",
+  "theme_color": "#0a0909",
+  "icons": [
+    {
+      "src": "./assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
